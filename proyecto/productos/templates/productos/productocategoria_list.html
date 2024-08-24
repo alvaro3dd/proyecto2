@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for object in productocategorias %}
+
+{% extends 'core/base.html' %}
+
+{% block header %}
+    Productos: Lista de productos
+{% endblock header %}
+
+{% block main %}
+    <div>{% for object in productocategorias %}
         <p>{{ object }}</p>        
-    {% endfor %}
+        {% endfor %}
+    </div>
     <button><a href="{% url 'productos:index' %}">Volver</a></button>
-</body>
-</html>
+{% endblock main %}
+
+
+
+
